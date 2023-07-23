@@ -9,20 +9,22 @@
         <form action="/convert" method="POST">
             <div class="form-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem">
                 <label for="amount">Amount <input id="amount" name="amount" type="number" value="0" step="0.01" /></label>
-                <label for="from">From <select id="from">
+                <label for="from">From <select id="from" name="from">
                     <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.currency + ' (' + currency.code + ')'}"></option>
                 </select></label>
-                <label for="to">To <select id="to">
+                <label for="to">To <select id="to" name="to">
                     <option th:each="currency: ${currencies}" th:value="${currency.code}" th:text="${currency.currency + ' (' + currency.code + ')'}"></option>
                 </select></label>
                 <button type="submit">Calculate</button>
             </div>
         </form>
     </div>
-    <div class="result-content">
-
+    <div class="result-content" style="margin: 2.4rem auto; text-align: center; font-weight: bold">
+        <th:block th:if="${result != null}">
+            <p th:text="${amount + ' ' + from + ' = ' + result + ' ' + to + ' (rate: ' + rate + ')'}"></p>
+        </th:block>
     </div>
-    <div class="currency-reload-inf" style="margin: 2.4rem auto; text-align: center">
+    <div class="currency-reload-inf" style="margin: 2.4rem auto; text-align: center; font-style: italic">
         <p>The currency exchange rates are updated daily at 9:00 AM.</p>
     </div>
 </body>

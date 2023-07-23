@@ -75,4 +75,8 @@ public class CurrencyService {
     public List<Currency> getAll() {
         return currencyRepository.findAll();
     }
+
+    public Currency findOne(String code) {
+        return currencyRepository.findByCode(code);
+    }
 }
