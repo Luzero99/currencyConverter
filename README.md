@@ -8,3 +8,6 @@ This documentation outlines the features and usage of the Currency Converter app
 
 - Backend: Spring Framework (Java)
 - View Template Engine: Thymeleaf
+
+## Screenshots
+![Main page](https://i.postimg.cc/tTVYvsJ5/Zrzut-ekranu-2023-08-10-o-19-22-49.png)
